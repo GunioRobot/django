@@ -17,19 +17,19 @@ In this context, stable means:
    - All the public APIs -- everything documented in the linked documents below,
      and all methods that don't begin with an underscore -- will not be moved or
      renamed without providing backwards-compatible aliases.
-     
+
    - If new features are added to these APIs -- which is quite possible --
      they will not break or change the meaning of existing methods. In other
      words, "stable" does not (necessarily) mean "complete."
-          
+
    - If, for some reason, an API declared stable must be removed or replaced, it
      will be declared deprecated but will remain in the API for at least two
      minor version releases. Warnings will be issued when the deprecated method
      is called.
-     
+
      See :ref:`official-releases` for more details on how Django's version
      numbering scheme works, and how features will be deprecated.
-     
+
    - We'll only break backwards compatibility of these APIs if a bug or
      security hole makes it completely unavoidable.
 
@@ -43,56 +43,56 @@ of 1.0. This includes these APIs:
     - :ref:`Authorization <topics-auth>`
 
     - :ref:`Caching <topics-cache>`.
-    
+
     - :ref:`Model definition, managers, querying and transactions
       <topics-db-index>`
-    
+
     - :ref:`Sending e-mail <topics-email>`.
-    
+
     - :ref:`File handling and storage <topics-files>`
-    
+
     - :ref:`Forms <topics-forms-index>`
-    
+
     - :ref:`HTTP request/response handling <topics-http-index>`, including file
       uploads, middleware, sessions, URL resolution, view, and shortcut APIs.
-    
+
     - :ref:`Generic views <topics-http-generic-views>`.
 
     - :ref:`Internationalization <topics-i18n>`.
-    
+
     - :ref:`Pagination <topics-pagination>`
-    
+
     - :ref:`Serialization <topics-serialization>`
-    
+
     - :ref:`Signals <topics-signals>`
-    
+
     - :ref:`Templates <topics-templates>`, including the language, Python-level
       :ref:`template APIs <ref-templates-index>`, and :ref:`custom template tags
       and libraries <howto-custom-template-tags>`. We may add new template
       tags in the future and the names may inadvertently clash with
       external template tags. Before adding any such tags, we'll ensure that
       Django raises an error if it tries to load tags with duplicate names.
-      
+
     - :ref:`Testing <topics-testing>`
 
     - :ref:`django-admin utility <ref-django-admin>`.
-    
+
     - :ref:`Built-in middleware <ref-middleware>`
-    
+
     - :ref:`Request/response objects <ref-request-response>`.
-    
+
     - :ref:`Settings <ref-settings>`. Note, though that while the :ref:`list of
       built-in settings <ref-settings>` can be considered complete we may -- and
       probably will -- add new settings in future versions. This is one of those
       places where "'stable' does not mean 'complete.'"
-      
+
     - :ref:`Built-in signals <ref-signals>`. Like settings, we'll probably add
       new signals in the future, but the existing ones won't break.
-      
+
     - :ref:`Unicode handling <ref-unicode>`.
-        
+
     - Everything covered by the :ref:`HOWTO guides <howto-index>`.
-    
+
 ``django.utils``
 ----------------
 
@@ -107,7 +107,7 @@ Most of the modules in ``django.utils`` are designed for internal use. Only the 
     - ``django.utils.safestring``
     - ``django.utils.translation``
     - ``django.utils.tzinfo``
-    
+
 Exceptions
 ==========
 
@@ -146,7 +146,7 @@ Certain APIs are explicitly marked as "internal" in a couple of ways:
     - Some documentation refers to internals and mentions them as such. If the
       documentation says that something is internal, we reserve the right to
       change it.
-      
+
     - Functions, methods, and other objects prefixed by a leading underscore
       (``_``). This is the standard Python way of indicating that something is
       private; if any method starts with a single ``_``, it's an internal API.

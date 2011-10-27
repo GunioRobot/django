@@ -8,6 +8,6 @@ File handling reference
 
 .. toctree::
    :maxdepth: 1
-   
+
    file
    storage

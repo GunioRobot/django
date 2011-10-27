@@ -2,8 +2,8 @@
 # Copyright (C) 2007 Translation Team <translation@sampada.info>
 # This file is distributed under the same license as the Django package.
 # Kannada Localization Team <translation@sampada.info>, 2007.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Django\n"

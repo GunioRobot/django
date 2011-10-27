@@ -2,8 +2,8 @@
 # Copyright (C) 2006 THE djangojs'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the djangojs package.
 # Meir Kriheli <meir@mksoft.co.il>, 2006.
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Django\n"

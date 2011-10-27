@@ -55,7 +55,7 @@ two major performance boosts: strings marked for translation using
 memory, and Django's internal dispatcher -- which is invoked frequently during
 request/response processing and when working with Django's object-relational
 mapper -- is now significantly faster.
-    
+
 .. _GeoDjango: http://geodjango.org/
 .. _Geographic Information Systems: http://en.wikipedia.org/wiki/Geographic_information_system
 .. _Its documentation: http://geodjango.org/docs/

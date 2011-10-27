@@ -29,7 +29,7 @@ Django's ``File`` has the following attributes and methods:
     The URL where the file can be retrieved. This is often useful in
     :ref:`templates <topics-templates>`; for example, a bit of a template for
     displaying a ``Car`` (see above) might look like:
-    
+
     .. code-block:: html+django
 
         <img src='{{ car.photo.url }}' alt='{{ car.name }}' />
@@ -83,7 +83,7 @@ Additional ``ImageField`` attributes
 ------------------------------------
 
 .. attribute:: File.width
-    
+
     Width of the image.
 
 .. attribute:: File.height
@@ -104,14 +104,14 @@ above) will also have a couple of extra methods:
     replace the existing file, but will create a new file and update the object
     to point to it. If ``save`` is ``True``, the model's ``save()`` method will
     be called once the file is saved. That is, these two lines::
-    
+
         >>> car.photo.save('myphoto.jpg', contents, save=False)
         >>> car.save()
-    
+
     are the same as this one line::
-    
+
         >>> car.photo.save('myphoto.jpg', contents, save=True)
-    
+
     Note that the ``content`` argument must be an instance of
     :class:`File` or of a subclass of :class:`File`.
 

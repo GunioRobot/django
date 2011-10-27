@@ -218,7 +218,7 @@ Methods
     .. method:: models.User.has_perms(perm_list)
 
         Returns ``True`` if the user has each of the specified permissions,
-        where each perm is in the format 
+        where each perm is in the format
         ``"<app label>.<permission codename>"``. If the user is inactive,
         this method will always return ``False``.
 

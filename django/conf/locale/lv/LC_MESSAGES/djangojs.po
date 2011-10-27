@@ -3,8 +3,8 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Gatis Tomsons <gatis.tomsons@gmail.com>, 2008.
 # , fuzzy
-# 
-# 
+#
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: Django\n"

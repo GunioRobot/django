@@ -10,5 +10,5 @@ these APIs should be written.
 
 .. toctree::
    :maxdepth: 1
-   
+
    admin-css

@@ -345,7 +345,7 @@ Here's how Django uses the sites framework:
   :class:`~django.contrib.sites.models.Site` is set to the current
   :setting:`SITE_ID`, and when comments are listed via the appropriate
   template tag, only the comments for the current site are displayed.
-  
+
 * In the :mod:`flatpages framework <django.contrib.flatpages>`, each
   flatpage is associated with a particular site. When a flatpage is created,
   you specify its :class:`~django.contrib.sites.models.Site`, and the

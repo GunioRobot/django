@@ -10,7 +10,7 @@ new comment system; this guide explains how.
 The main changes from the old system are:
 
     * This new system is documented.
-    
+
     * It uses modern Django features like :ref:`forms <topics-forms-index>` and
       :ref:`modelforms <topics-forms-modelforms>`.
 
@@ -25,12 +25,12 @@ The main changes from the old system are:
       functions: ``{% get_comment_form %}``, which returns a form for posting a
       new comment, and ``{% render_comment_form %}``, which renders said form
       using the ``comments/form.html`` template.
-      
+
     * The way comments are include in your URLconf have changed; you'll need to
       replace::
-    
+
             (r'^comments/', include('django.contrib.comments.urls.comments')),
-      
+
       with::
 
             (r'^comments/', include('django.contrib.comments.urls')),
@@ -52,7 +52,7 @@ run the following SQL:
 
     BEGIN;
 
-    INSERT INTO django_comments 
+    INSERT INTO django_comments
         (content_type_id, object_pk, site_id, user_name, user_email, user_url,
         comment, submit_date, ip_address, is_public, is_removed)
     SELECT
@@ -60,21 +60,21 @@ run the following SQL:
         submit_date, ip_address, is_public, not approved
     FROM comments_freecomment;
 
-    INSERT INTO django_comments 
+    INSERT INTO django_comments
         (content_type_id, object_pk, site_id, user_id, user_name, user_email,
         user_url, comment, submit_date, ip_address, is_public, is_removed)
-    SELECT 
+    SELECT
         content_type_id, object_id, site_id, user_id, '', '', '', comment,
         submit_date, ip_address, is_public, is_removed
     FROM comments_comment;
 
     UPDATE django_comments SET user_name = (
-        SELECT username FROM auth_user 
+        SELECT username FROM auth_user
         WHERE django_comments.user_id = auth_user.id
     ) WHERE django_comments.user_id is not NULL;
     UPDATE django_comments SET user_email = (
-        SELECT email FROM auth_user 
+        SELECT email FROM auth_user
         WHERE django_comments.user_id = auth_user.id
     ) WHERE django_comments.user_id is not NULL;
-    
+
     COMMIT;

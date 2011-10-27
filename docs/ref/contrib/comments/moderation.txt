@@ -34,7 +34,7 @@ A simple example is the best illustration of this. Suppose we have the
 following model, which would represent entries in a weblog::
 
     from django.db import models
-    
+
     class Entry(models.Model):
         title = models.CharField(maxlength=250)
         body = models.TextField()
@@ -57,11 +57,11 @@ Accomplishing this is fairly straightforward and requires very little
 code::
 
     from django.contrib.comments.moderation import CommentModerator, moderator
-    
+
     class EntryModerator(CommentModerator):
         email_notification = True
         enable_field = 'enable_comments'
-    
+
     moderator.register(Entry, EntryModerator)
 
 The :class:`CommentModerator` class pre-defines a number of useful moderation

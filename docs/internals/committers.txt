@@ -139,7 +139,7 @@ Joseph Kocherhans
     Django / Pinax_ based websites. He enjoys learning more about programming
     languages and system architectures and contributing to open source
     projects. Brian is the host of the `Django Dose`_ podcasts.
-    
+
     Brian helped immensely in getting Django's "newforms-admin" branch finished
     in time for Django 1.0; he's now a full committer, continuing to improve on
     the admin and forms system.

@@ -49,15 +49,15 @@ just have to do these things:
 
     1. Define a number of :mod:`django.forms`
        :class:`~django.forms.forms.Form` classes -- one per wizard page.
-       
+
     2. Create a :class:`~django.contrib.formtools.wizard.FormWizard` class
        that specifies what to do once all of your forms have been submitted
        and validated. This also lets you override some of the wizard's behavior.
-       
+
     3. Create some templates that render the forms. You can define a single,
        generic template to handle every one of the forms, or you can define a
        specific template for each form.
-       
+
     4. Point your URLconf at your
        :class:`~django.contrib.formtools.wizard.FormWizard` class.
 

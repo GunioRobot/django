@@ -1,6 +1,6 @@
 {# Author: Justin Bronn, Travis Pinney & Dane Springmeyer #}
 {% block vars %}var {{ module }} = {};
-{{ module }}.map = null; {{ module }}.controls = null; {{ module }}.panel = null; {{ module }}.re = new RegExp("^SRID=\d+;(.+)", "i"); {{ module }}.layers = {}; 
+{{ module }}.map = null; {{ module }}.controls = null; {{ module }}.panel = null; {{ module }}.re = new RegExp("^SRID=\d+;(.+)", "i"); {{ module }}.layers = {};
 {{ module }}.wkt_f = new OpenLayers.Format.WKT();
 {{ module }}.is_collection = {{ is_collection|yesno:"true,false" }};
 {{ module }}.collection_type = '{{ collection_type }}';
@@ -43,10 +43,10 @@
 {{ module }}.modify_wkt = function(event){
   if ({{ module }}.is_collection){
     if ({{ module }}.is_point){
-      {{ module }}.add_wkt(event); 
+      {{ module }}.add_wkt(event);
       return;
     } else {
-      // When modifying the selected components are added to the 
+      // When modifying the selected components are added to the
       // vector layer so we only increment to the `num_geom` value.
       var feat = new OpenLayers.Feature.Vector(new OpenLayers.Geometry.{{ geom_type }}());
       for (var i = 0; i < {{ module }}.num_geom; i++){
@@ -69,7 +69,7 @@
   {{ module }}.map.setCenter(new OpenLayers.LonLat({{ default_lon }}, {{ default_lat }}), {{ default_zoom }});
 }
 // Add Select control
-{{ module }}.addSelectControl = function(){   
+{{ module }}.addSelectControl = function(){
   var select = new OpenLayers.Control.SelectFeature({{ module }}.layers.vector, {'toggle' : true, 'clickout' : true});
   {{ module }}.map.addControl(select);
   select.activate();
@@ -93,11 +93,11 @@
   {{ module }}.controls = [nav, draw_ctl, mod];
   {% else %}
   {{ module }}.controls = [nav, darw_ctl];
-  {% endif %}  
+  {% endif %}
 }
 {{ module }}.init = function(){
     {% block map_options %}// The options hash, w/ zoom, resolution, and projection settings.
-    var options = { 
+    var options = {
 {% autoescape off %}{% for item in map_options.items %}      '{{ item.0 }}' : {{ item.1 }}{% if not forloop.last %},{% endif %}
 {% endfor %}{% endautoescape %}    };{% endblock %}
     // The admin map for this geometry field.
@@ -112,7 +112,7 @@
     // Read WKT from the text field.
     var wkt = document.getElementById('{{ id }}').value;
     if (wkt){
-      // After reading into geometry, immediately write back to 
+      // After reading into geometry, immediately write back to
       // WKT <textarea> as EWKT (so that SRID is included).
       var admin_geom = {{ module }}.read_wkt(wkt);
       {{ module }}.write_wkt(admin_geom);
@@ -128,14 +128,14 @@
       // Zooming to the bounds.
       {{ module }}.map.zoomToExtent(admin_geom.geometry.getBounds());
       if ({{ module }}.is_point){
-          {{ module }}.map.zoomTo({{ point_zoom }}); 
+          {{ module }}.map.zoomTo({{ point_zoom }});
       }
     } else {
       {{ module }}.map.setCenter(new OpenLayers.LonLat({{ default_lon }}, {{ default_lat }}), {{ default_zoom }});
     }
     // This allows editing of the geographic fields -- the modified WKT is
     // written back to the content field (as EWKT, so that the ORM will know
-    // to transform back to original SRID). 
+    // to transform back to original SRID).
     {{ module }}.layers.vector.events.on({"featuremodified" : {{ module }}.modify_wkt});
     {{ module }}.layers.vector.events.on({"featureadded" : {{ module }}.add_wkt});
     {% block controls %}

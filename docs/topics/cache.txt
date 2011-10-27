@@ -451,11 +451,11 @@ The low-level cache API
 Sometimes, caching an entire rendered page doesn't gain you very much and is,
 in fact, inconvenient overkill.
 
-Perhaps, for instance, your site includes a view whose results depend on 
+Perhaps, for instance, your site includes a view whose results depend on
 several expensive queries, the results of which change at different intervals.
-In this case, it would not be ideal to use the full-page caching that the 
-per-site or per-view cache strategies offer, because you wouldn't want to 
-cache the entire result (since some of the data changes often), but you'd still 
+In this case, it would not be ideal to use the full-page caching that the
+per-site or per-view cache strategies offer, because you wouldn't want to
+cache the entire result (since some of the data changes often), but you'd still
 want to cache the results that rarely change.
 
 For cases like this, Django exposes a simple, low-level cache API. You can use
@@ -763,10 +763,10 @@ Django comes with a few other pieces of middleware that can help optimize your
 apps' performance:
 
     * ``django.middleware.http.ConditionalGetMiddleware`` adds support for
-      modern browsers to conditionally GET responses based on the ``ETag`` 
+      modern browsers to conditionally GET responses based on the ``ETag``
       and ``Last-Modified`` headers.
 
-    * ``django.middleware.gzip.GZipMiddleware`` compresses responses for all 
+    * ``django.middleware.gzip.GZipMiddleware`` compresses responses for all
       moderns browsers, saving bandwidth and transfer time.
 
 Order of MIDDLEWARE_CLASSES

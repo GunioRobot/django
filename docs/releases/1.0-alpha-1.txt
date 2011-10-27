@@ -58,7 +58,7 @@ An improved Django ORM
     including backwards-incompatible modifications and mentions of new
     features opened up by this refactoring, is available on the Django
     wiki:
-    
+
          http://code.djangoproject.com/wiki/QuerysetRefactorBranch
 
 Automatic escaping of template variables

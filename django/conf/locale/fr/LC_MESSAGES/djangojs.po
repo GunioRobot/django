@@ -1,6 +1,6 @@
-# French translation for Django Javascript. 
+# French translation for Django Javascript.
 # Copyright (C) 2005 Mikaël Barbero
-# This file is distributed under the same license as the Django package. 
+# This file is distributed under the same license as the Django package.
 #
 msgid ""
 msgstr ""
